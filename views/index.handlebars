@@ -1,0 +1,52 @@
+<div class="contanier-fluid">
+    <div class = "row">
+        <div class = "col text-center" style= color:aliceblue>
+            <h1>Da Burgers!</h1>
+    </div>
+</div>
+
+<div class ="row">
+    <div class = "col-4">
+
+        <h2 class = "text-center-left" style= "color:aliceblue">Eat<br>these<br>burgers</h2>
+        <ul>
+            <hr color = aliceblue 2px>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{>burger-block devoured = true}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-4">
+        <form class="form">
+            <div>
+                <input type="text" id="burger" name="burger_name">
+            </div>
+
+            <br>
+
+            <button class ="btn btn-primary btn-lg" type="submit" >Submit</button>
+
+            <br>
+            <br>
+
+            <div>
+                <p style="color:aliceblue">Enter a burger you want to eat Click the "Submit" button</p>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-4-left" >
+        <h2 class="text-right" style= "color:aliceblue">Devoured!</h2>
+        <hr color= aliceblue 2px>
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{>burger-block devoured = false}}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+</div>
